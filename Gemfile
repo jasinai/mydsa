@@ -16,9 +16,6 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -31,18 +28,23 @@ gem 'jbuilder', '~> 1.2'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc',          group: :doc, require: false
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/jonleighton/spring
-gem 'spring',        group: :development
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+group :test do
+    gem 'factory_girl_rails' #https://github.com/thoughtbot/factory_girl_rails
+    gem 'coveralls', require: false
+end
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+group :development do
+    gem 'guard-rspec' #https://github.com/guard/guard-rspec
+    gem 'guard-spork' #https://github.com/guard/guard-spork
+    gem 'annotate' #https://github.com/ctran/annotate_models
+    gem 'better_errors' #https://github.com/charliesome/better_errors
+    gem 'spring' # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/jonleighton/spring
+end
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
+group :development, :test do
+	gem 'rspec-rails'
+	gem 'capybara'
+end
