@@ -1,0 +1,2 @@
+[![Build Status](https://travis-ci.org/jasinai/mydsa.png?branch=master)](https://travis-ci.org/jasinai/mydsa)
+[![Coverage Status](https://coveralls.io/repos/jasinai/mydsa/badge.png)](https://coveralls.io/r/jasinai/mydsa)
